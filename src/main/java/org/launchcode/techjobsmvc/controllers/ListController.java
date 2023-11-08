@@ -20,7 +20,7 @@ public class ListController {
 
     static HashMap<String, String> columnChoices = new HashMap<>();
     static HashMap<String, Object> tableChoices = new HashMap<>();
-
+//listController controls the list page, columnChoices are the column names at top, tableChoices are what you click on
     public ListController () {
         columnChoices.put("all", "All");
         columnChoices.put("employer", "Employer");
@@ -34,7 +34,7 @@ public class ListController {
         tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
     }
 
-    @GetMapping(value = "")
+    @GetMapping(value = "")//makes the list
     public String list(Model model) {
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
@@ -46,7 +46,7 @@ public class ListController {
         return "list";
     }
 
-    @GetMapping(value = "jobs")
+    @GetMapping(value = "jobs")//makes list-jobs so when clicked it gets the job with""plus value
     public String listJobsByColumnAndValue(Model model, @RequestParam String column, @RequestParam(required = false) String value) {
         ArrayList<Job> jobs;
         if (column.equals("all")){

@@ -20,7 +20,7 @@ public class SearchController {
         model.addAttribute("columns", columnChoices);
         return "search";
     }
-
+//Will control results when you search for a word, look at other handlers for ideas.
     // TODO #3 - Create a handler to process a search request and render the updated search view.
 
 }

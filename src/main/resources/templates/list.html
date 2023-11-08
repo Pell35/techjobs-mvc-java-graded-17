@@ -19,13 +19,16 @@
   </tr>
   <tr>
     <!-- TODO #2: Complete the View Jobs By Category Table. -->
-
+<!--  //listbyColumnAndValue from ListController label for all plus the values-->
     <td></td> <!-- Feel free to remove or modify this element if necessary. -->
 
     <td th:each="category : ${tableChoices}">
+<!--      loops the tablesChoices and sets as category-->
       <ul>
         <li th:each="item : ${category.value}">
+<!--          loops and assigns tableChoices value as item-->
           <a th:href="@{/list/jobs(column=${category.key},value=${item})}" th:text="${item}"></a>
+<!--          href attribute -->
         </li>
       </ul>
     </td>
